@@ -55,4 +55,19 @@
  */
 - (void)removeAllCachedResponsesInMemory;
 
+/*
+ * Returns the date that the most recent network request was made for the given NSURLRequest, as provided to the cache by setLastRequestDate:forRequest:.
+ */
+- (NSDate *)lastRequestDateForRequest:(NSURLRequest *)request;
+
+/*
+ * Tells the cache that a network request was made for a specific NSURLRequest.
+ */
+- (void)setLastRequestDate:(NSDate *)date forRequest:(NSURLRequest *)request;
+
+/*
+ * Returns the HTTP status code of the most recently cached response, or nil
+ */
+- (NSNumber *)statusCodeForRequest:(NSURLRequest *)request;
+
 @end
